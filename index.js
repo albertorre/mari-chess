@@ -77,6 +77,6 @@ io.on('connection', function (socket) {
 });
 
 server.listen(port);
-console.log(port);
-console.log(server);
+console.log('runniiiiiiiiiiiiing',port);
+
 console.log('Connected');
