@@ -137,7 +137,7 @@ socket.on('player', (msg) => {
 
     var cfg = {
         orientation: color,
-        draggable: true,
+        draggable: false,
         position: 'start',
         onDragStart: onDragStart,
         onDrop: onDrop,
