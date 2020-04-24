@@ -26,7 +26,7 @@ io.on('connection', function (socket) {
     // console.log(players);
     var color;
     var playerId =  Math.floor((Math.random() * 100) + 1)
-    
+
 
     console.log(playerId + ' connected');
 
@@ -40,10 +40,10 @@ io.on('connection', function (socket) {
             socket.emit('full', roomId)
             return;
         }
-        
+
         console.log(games[roomId]);
         players = games[roomId].players
-        
+
 
         if (players % 2 == 0) color = 'black';
         else color = 'white';
@@ -51,7 +51,7 @@ io.on('connection', function (socket) {
         socket.emit('player', { playerId, players, color, roomId })
         // players--;
 
-        
+
     });
 
     socket.on('move', function (msg) {
@@ -71,10 +71,12 @@ io.on('connection', function (socket) {
         }
         console.log(playerId + ' disconnected');
 
-    }); 
+    });
 
-    
+
 });
 
 server.listen(port);
+console.log(port);
+console.log(server);
 console.log('Connected');
