@@ -1,0 +1,16 @@
+nombre: Greet Everyone
+# Este flujo de trabajo se desencadena en los envíos al repositorio.
+on: [push]
+
+jobs:
+  build:
+    # El nombre del archivo es Greeting
+    name: Greeting
+    # Este archivo se ejecuta en Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: node index.js
