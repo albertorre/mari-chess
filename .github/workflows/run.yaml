@@ -8,9 +8,11 @@ jobs:
     # Este archivo se ejecuta en Linux
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-        run: |
-          npm install
-          npm run build
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: npm scripts
+      run: |
+        npm install
+        npm run build
